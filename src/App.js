@@ -32,11 +32,13 @@ function App() {
             <CurrencyRow
                 currencies={currencies}
                 selectCurrency={fromCurrency}
+                onChangeCurrency={e => setFromCurrency(e.target.value)}
             />
             <div className="equal">=</div>
             <CurrencyRow
                 currencies={currencies}
                 selectCurrency={toCurrency}
+                onChangeCurrency={e => setToCurrency(e.target.value)}
             />
         </>
     );
