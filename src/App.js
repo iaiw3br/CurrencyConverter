@@ -15,7 +15,13 @@ function App() {
         fetch(EXCHANGE_URL)
             .then(result => result.json())
             .then(data => {
-                setCurrencyOptions([data.base, ...Object.keys(data.rates)]);
+                const currencies = Object.keys(data.rates);
+                if (currencies && currencies.length) {
+                    setCurrencyOptions([data.base, ...currencies]);
+                    setFromCurrency(data.base);
+                    setToCurrency(currencies[0]);
+                }
+
             });
 
     }, []);
@@ -25,10 +31,12 @@ function App() {
             <h1>Convert</h1>
             <CurrencyRow
                 currencies={currencies}
+                selectCurrency={fromCurrency}
             />
             <div className="equal">=</div>
             <CurrencyRow
                 currencies={currencies}
+                selectCurrency={toCurrency}
             />
         </>
     );
