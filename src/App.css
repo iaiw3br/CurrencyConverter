@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 .8rem;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: .3em;
+    padding: .33em;
+    width: 11em;
+}
+
+select {
+    margin-left: .5rem;
+    height: 1.6rem;
+    border-radius: .3em;
+
+}
+
+.equal {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
