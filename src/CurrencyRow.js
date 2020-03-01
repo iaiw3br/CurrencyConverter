@@ -9,6 +9,10 @@ export default function CurrencyRow(props) {
         onChangeAmount
     } = props;
 
+    if ( isNaN(amount) ) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
             <input type="number" className="input" value={amount} onChange={onChangeAmount}/>
